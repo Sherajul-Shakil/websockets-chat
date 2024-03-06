@@ -38,3 +38,24 @@ body {
     height: 150px;
     overflow: auto;
 }
+
+
+/* for meaage box */
+.right .direct-chat-msg {
+    text-align: right;
+}
+
+.left .direct-chat-msg {
+    text-align: left;
+}
+
+.direct-chat-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    /* Adjust as needed */
+}
+
+.direct-chat-text {
+    font-size: 1em;
+    /* Adjust as needed */
+}

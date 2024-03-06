@@ -29,11 +29,30 @@ $(document).ready(function () {
         });
     });
 
-    // Listen for messages from the 'chat' channel
+
     window.Echo.channel('chat').listen('.message', (e) => {
-        $('#messages').append('<p><strong>' + e.username + '</strong>' + ': ' + e.message + '</p>');
-        // $('#message').val('');
+        let messageAlignmentClass = '';
+        let messageColor = '';
+
+        if ($('#username').val() === e.username) {
+            messageAlignmentClass = 'right';
+            messageColor = 'text-primary';
+        } else {
+            messageAlignmentClass = 'left';
+            messageColor = 'text-dark';
+        }
+
+        let messageHtml = '<div class="direct-chat-msg d' + messageAlignmentClass + '">' +
+            '<div class="direct-chat-info clearfix">' +
+            '<span class="direct-chat-name ' + messageColor + ' +  pull-' + messageAlignmentClass + '">' + e.username + '</span>' +
+            '</div>' +
+            '<div class="direct-chat-text ' + messageColor + '">' + e.message + '</div>' +
+            '</div>';
+        $('#messages').append(messageHtml);
+
         scrollToBottom();
     });
+
+
     scrollToBottom();
 });

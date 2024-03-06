@@ -10,12 +10,6 @@
     @vite(['resources/css/app.css' , 'resources/js/app.js'])
     <title>Live Chat</title>
 
-    <style>
-        .scroll {
-            height: 150px;
-            overflow: scroll;  
-        }
-    </style>
 </head>
 <body>
 <div class="app">
@@ -28,7 +22,7 @@
         <div class="col-sm-6 offset-sm-3">
             <div class="box box-primary direct-chat direct-chat-primary">
 
-                <div class="box-body scroll">
+                <div class="box-body">
                     <div class="direct-chat-messages" id="messages"></div>
                 </div>
 
